@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJS</title>
+	<script src="vue.js"></script>
+</head>
+<style type="text/css">
+	.demo {
+		width: 100px;
+		height: 100px;
+		background-color: gray;
+		margin: 10px;
+		display: inline-block;
+
+	}
+	.red {
+		background-color: red;
+	}
+	.blue {
+		background-color: blue;
+	}
+	.green {
+		background-color: green;
+	}
+
+</style>
+<body>
+	
+	<div id="app">
+		<p v-if="show">You can see me!</p>
+		<p v-else>Now you see me!</p>
+		<template v-if="show">
+			<h1>Heading</h1>
+			<p>Inside a template</p>
+		</template>
+		<p v-show="show">Do you also see me?</p>
+		<button @click="show = !show">Switch</button>
+	</div>
+
+	<script>
+		new Vue({
+		  el: '#app',
+		  data: {
+		  	show: true,
+		  },
+		})
+	</script>
+</body>
+</html>

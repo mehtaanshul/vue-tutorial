@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueJS</title>
+	<script src="vue.js"></script>
+</head>
+<style type="text/css">
+
+</style>
+<body>
+	
+	<div id="app">
+		<my-cmp></my-cmp>
+	</div>
+
+	<script>
+		var cmp = {
+			data: function(){
+				return {
+					status: 'Crticial' 
+				}
+			},
+			template: '<p>{{status}} <button @click="changeStatus">Change</button></p>',
+			methods: {
+				changeStatus: function(){
+					this.status = "Normal"
+				}
+			}
+		}
+		new Vue({
+		  el: '#app',
+		  components: {
+		  	'my-cmp': cmp
+		  }
+		})
+	</script>
+</body>
+</html>
